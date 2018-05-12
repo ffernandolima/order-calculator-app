@@ -1,6 +1,6 @@
 OrderCalculator.App is a console application which has been developed using .NET Framework 4.7 and some features of C# 6 and 7 in order to solve the presented problem. Because of that, you need to install this version of the .NET Framework and also install the Visual Studio 2017 (If you don't have these programs installed yet).
 
-The application applies all required rules described at the README.md file.
+The application applies all required rules described at Rules.txt file.
 
 You can run the application at least by four different methods:
 
