@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CC1B0AF3-987D-4EF3-85EC-162514AA0788}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>OrderCalculator.App</RootNamespace>
+    <AssemblyName>OrderCalculator.App</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Argument.cs" />
+    <Compile Include="Configuration\Settings.cs" />
+    <Compile Include="Exceptions\ArgumentParserException.cs" />
+    <Compile Include="Exceptions\OrderCalculatorException.cs" />
+    <Compile Include="ExitCode.cs" />
+    <Compile Include="Operation.cs" />
+    <Compile Include="Parser\ArgumentParser.cs" />
+    <Compile Include="Services\OrderCalculatorController.cs" />
+    <Compile Include="Services\OrderCalculatorService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrderCalculator.Common\OrderCalculator.Common.csproj">
+      <Project>{46582993-bcb9-4bb9-a0d2-6a3e0b3d658e}</Project>
+      <Name>OrderCalculator.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrderCalculator.Contracts\OrderCalculator.Contracts.csproj">
+      <Project>{17cd8d24-2b61-454d-a007-16bdd2aac135}</Project>
+      <Name>OrderCalculator.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrderCalculator.DataContracts\OrderCalculator.DataContracts.csproj">
+      <Project>{b375b10a-addb-4107-96f2-b1821f6af73e}</Project>
+      <Name>OrderCalculator.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrderCalculator.Data\OrderCalculator.Data.csproj">
+      <Project>{6afc4114-a6cf-48a7-ba60-b987de2f2644}</Project>
+      <Name>OrderCalculator.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrderCalculator.Framework\OrderCalculator.Framework.csproj">
+      <Project>{b9e067ce-18fd-4354-a55d-5b04fc152e16}</Project>
+      <Name>OrderCalculator.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

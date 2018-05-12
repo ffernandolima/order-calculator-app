@@ -1,0 +1,31 @@
+OrderCalculator.App is a console application which has been developed using .NET Framework 4.7 and some features of C# 6 and 7 in order to solve the presented problem. Because of that, you need to install this version of the .NET Framework and also install the Visual Studio 2017 (If you don't have these programs installed yet).
+
+The application applies all required rules described at the README.md file which has been provided by the talent acquisition specialist.
+
+You can run the application at least by four different methods:
+
+1 - You can run directly from the visual studio 2017 (Debugging it or not, you can choose)
+
+2 - Going to the folder where the application (exe file and all dependencies folder) is and then clicking directly to exe file. Doing this, a new console will be opened and you'll be able to use it.
+
+3 - Opening a new command prompt (cmd) and executing the following commands:
+	- cd 'OrderCalculator.App Folder Path'
+	- OrderCalculator.App or OrderCalculator.App.exe
+	- CalculateOrder CatalogFilePath Product1 QuantityProduct1 Product2 QuantityProduct2...
+	
+4 - Consuming it from another application or service.
+	
+You can choose the method you want and then use it.
+
+The application will return an exit code (Success = 0, Error = 1) according to its execution. Also it will always print a message or result, so that the consumer will be able to know what has happened during the execution.
+
+Talking about the solution, it uses two external libraries:
+- log4net library in order to write some logs and help tracking the execution steps.
+- CsvHelper library in order to help reading the catalog file.
+PS.: The Nuget package manager will download the packages when someone builds the solution.
+
+To sum up, the architecture has been based on multi-layer and some design patterns have been used on purpose of solving some specific problems.
+
+Also, there's an unit test project that covers all or almost all scenarios and flows of the application. You can run all unit tests and see the results of them.
+
+Please let me know if something went wrong during the usage of this application, may I know how to solve the 'problem'.
