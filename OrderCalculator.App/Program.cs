@@ -9,9 +9,9 @@ namespace OrderCalculator.App
 		{
 			Startup.Initialize();
 
-			using (IOrderCalculatorController service = new OrderCalculatorController(args))
+			using (IOrderCalculatorController controller = new OrderCalculatorController(args))
 			{
-				var result = service.Execute();
+				var result = controller.Execute();
 
 				return result;
 			}
